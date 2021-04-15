@@ -1,0 +1,30 @@
+.obj-div {
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.img-logo {
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.li-class {
+    list-style-type: none;
+}
+
+.div-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+}
+
+.container-item {
+    display: flex;
+    flex-direction: column;
+}
