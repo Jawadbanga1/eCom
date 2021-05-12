@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  /* background-color: aliceblue; */
+}
+
+button {
+  /* width: auto; */
+  /* display: inline-block; */
+  height: 70%;
+  margin-top: 7px;
+  border-radius: 12px;
+  box-shadow: 0 0 3px 0 grey;
+  border: none;
+  background-color: white;
+}
