@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import {Provider} from 'react-redux'
+// import {createStore} from 'redux'
+// import rootReducer from './redux/reducers'
+// import {Provider} from 'react-redux'
+// import firebase from "firebase/app"
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBwjrc-y5RlTlakFnjjWLK8zGM_yc3lBqw",
+  authDomain: "ecom-d48ae.firebaseapp.com",
+  projectId: "ecom-d48ae",
+  storageBucket: "ecom-d48ae.appspot.com",
+  messagingSenderId: "565201802118",
+  appId: "1:565201802118:web:645ef7c6b1e3d002a6d207",
+  measurementId: "G-T27LPRXGDQ"
+}
+
+// firebase.initializeApp(firebaseConfig);
+
+// const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

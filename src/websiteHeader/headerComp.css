@@ -1,0 +1,134 @@
+.header-website {
+    /* background: pink; */
+    height: 9vh;
+    width: 100%;
+    box-shadow: 0 0 8px grey;
+    border-radius: 3px 3px 15px 15px;
+    background-color: white;
+    /* clip-path: inset(0px 0px 0px -15px); */
+    /* position: fixed; */
+    /* top: 0; */
+    /* margin-left: 0;
+    left: 0;
+    float: top;
+    z-index: -1; */
+}
+
+.nbutton {
+    width: auto;
+    display: inline-block;
+    height: 75%;
+    /* border: 2px solid grey;
+    color: blue;
+    margin: auto;
+    display: block;
+    right: 0; */
+    position: left;
+    float: left;
+    /* border-radius: 15px; */
+    margin: 5px;
+    /* box-shadow: 0 0 7px 0 grey; */
+}
+
+.button-header {
+    /* width: auto; */
+    /* display: inline-block; */
+    height: 70%;
+    margin-top: 7px;
+    border-radius: 12px;
+    box-shadow: 0 0 3px 0 grey;
+    border: none;
+    background-color: white;
+}
+
+.button-header:hover {
+    background-color: rgb(239, 240, 241);
+    box-shadow: 0 0 11px 0 grey;
+}
+
+.button-menu {
+    position: left;
+    float: left;
+    margin-left: 2vw;
+}
+
+.button-profile-menu {
+    position: right;
+    float: right; 
+    margin-right: 2vw;
+}
+
+.button-add-menu {
+    position: right;
+    float: right; 
+    margin-right: 2vw;
+    border-radius: 20px;
+}
+
+.menu-bar {
+    width: 20%;
+    height: auto;
+    border: 1px solid grey;
+    /* left: 0; */
+    background: white;
+    z-index: 100;
+    /* float: left; */
+    /* position: left; */
+    box-shadow: 0 0 8px grey, 0 0 5px darkblue;
+    overflow:hidden;
+    clip-path: inset(0px -15px -15px 0px);
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* display: block; */
+}
+
+#menu-bar-profile {
+    width: 20%;
+    height: auto;
+    border: 1px solid grey;
+    right: 0;
+    background: white;
+    z-index: 100;
+    float: right;
+    position: right;
+    box-shadow: 8px 8px 8px 0 grey, 0 0 5px darkblue;
+    clip-path: inset(0px -15px -15px 0px);
+    border-radius: 1px;
+    position: absolute;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* display: block; */
+}
+
+#menu-bar-item {
+    min-height: 45px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 2px grey;
+    border-radius: 2px;
+    /* text-align: left; */
+    padding: 4px;
+    /* display: block; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#text-in-menuitem {
+    text-align: center;
+    /* vertical-align: middle; */
+    margin: auto;
+    /* max-width: 50%; */
+    /* padding-left: 10px; */
+    display: block;
+    font-family: Gill Sans Extrabold;
+}
+
+.header-top-container {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.centering-content {
+    margin: auto;
+}
