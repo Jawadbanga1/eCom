@@ -12,7 +12,11 @@ const firebaseConfig = {
 
 // if (!firebase.apps.length) {
     // firebase.initializeApp(DB_CONFIG);
-    firebase.initializeApp(firebaseConfig)
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
 //  }
+
+export const auth = firebase.auth();
+
+export const db = firebaseApp.firestore();
 
 export default firebase;

@@ -7,24 +7,17 @@ import TopHeader from './websiteHeader/headerComponent'
 import firebase from "firebase/app"
 import 'firebase/firestore'
 import 'firebase/auth'
+import {useDispatch} from 'react-redux'
 
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
+import {db, auth} from './firebaseConfig'
 
-firebase.initializeApp({
-  apiKey: "AIzaSyBwjrc-y5RlTlakFnjjWLK8zGM_yc3lBqw",
-  authDomain: "ecom-d48ae.firebaseapp.com",
-  projectId: "ecom-d48ae",
-  storageBucket: "ecom-d48ae.appspot.com",
-  messagingSenderId: "565201802118",
-  appId: "1:565201802118:web:645ef7c6b1e3d002a6d207",
-  measurementId: "G-T27LPRXGDQ"
-})
-
-const auth = firebase.auth()
-const firestore = firebase.firestore()
+// const auth = firebase.auth()
+// const firestore = firebase.firestore()
 
 function App() {
+  const dispatch = useDispatch()
   const topLevelFunction = () => console.log('hard pass')
   const arrayMenu1=[{name: 'Apple', image: 'img', callBack: topLevelFunction}, {name: 'SamSam', image: 'img'}]
   const[user] = useAuthState(auth)
@@ -32,18 +25,49 @@ function App() {
     // return console.log('signInG triggered')
     const provider = new firebase.auth.GoogleAuthProvider()
     auth.signInWithPopup(provider)
+    .then((response) => {
+      dispatch({type: 'USER_DATA', payload: response })
+      console.log('<<<<<<response', response)
+    })
+    .catch((error) => console.log('error', error))
   } 
-  const arrayProfileMenu=[{name: 'Login', callBack: signInWithGoogle}]
 
-  const objInDataBase = firestore.collection('obj') 
+  const objInDataBase = db.collection('obj1') 
+  var testFirebase = () => {
+    
+    // objInDataBase.add({
+    //       test: 'this is a testbabe',
+    //       idTest: Math.random()*100
+    //     });
+    db.collection('Items').doc().get()
+    .then((resp)=> console.log(resp, 'whats in firebase'))
+    .catch((error) => console.log(error, "error"))
+
+  }
+  const arrayProfileMenu=[{name: 'Login', callBack: signInWithGoogle}, {name: 'POST RAND', callBack: testFirebase}]
+
   // const query = objInDataBase.orderBy('').limit(25)
   const [objs] = useCollectionData(objInDataBase)
 
   useEffect(() => {
-      objInDataBase.add({
-        test: 'this is a test',
-        idTest: Math.random()*1000
-      });
+    firebase.firestore().collection("New test").doc().set({"name":"john R"});
+    // firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+    //   console.log(idToken, 'idToken')
+    // }).catch(function(error) {
+    //   console.log(error)
+    // });
+      // objInDataBase.add({
+      //   test: 'this is a test abckj',
+      //   idTest: Math.random()*1000
+      // });
+
+      // testFirebase = objInDataBase.add({
+      //   test: 'this is a',
+      //   idTest: Math.random()*100
+      // });
+
+
+
   }, []);
  
   return (

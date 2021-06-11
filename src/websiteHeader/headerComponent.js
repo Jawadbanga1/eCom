@@ -3,7 +3,8 @@ import './headerComp.css'
 import imgBurger from './Hamburger_icon.png'
 import MenuItem from './menuItem/MenuItem'
 import noProfile from './profileLogo.png'
-// import AddNew from '../addNew/AddNew'
+import AddNew from '../addNew/AddNew'
+import {connect} from 'react-redux'
 
 
 class TopHeader extends React.Component {
@@ -74,12 +75,12 @@ class TopHeader extends React.Component {
                     <button className='button-header button-profile-menu' 
                         onClick={(event, a, b, c) => this.profileButtonHandler(event, a, b, c)}
                     >
-                        <img src={noProfile} width='25vw' height='25vh'/>
+                        <img src={ this.props.userData.user ? this.props.userData.user.photoURL : noProfile} width='25vw' height='25vh'/>
                     </button>
                     <button className='button-header button-add-menu' 
                         onClick={(event, a, b, c) => this.addNewButtonHandler(event, a, b, c)}
                     >
-                        <h2 className='centering-content'>+</h2>
+                        <h4 className='centering-content'>+ Add New</h4>
                     </button>
                 </div>
                 
@@ -126,14 +127,20 @@ class TopHeader extends React.Component {
                 } 
 
                 {
-                    // this.state.showDialogue ? <AddNew/> : null
+                    this.state.showDialogue ? <AddNew/> : null
                 }
             </div>
         )
     }
 }
+function mapStateToProps (state) {
+    console.log(state.firebaseData, '<<<<state.firebaseData')
+    return {
+        userData : state.firebaseData
+    }
+}
 
-export default TopHeader;
+export default connect(mapStateToProps)(TopHeader);
 
                                         // <MenuItem eventFunc={this.menuItemClickHandler.bind(this)} txt={this.props.arrMenu[0].name}>
                                         // </MenuItem> 
